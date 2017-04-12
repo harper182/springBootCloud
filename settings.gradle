@@ -1,0 +1,1 @@
+include 'eureka','config','zuul','hystrix','service1','service2'

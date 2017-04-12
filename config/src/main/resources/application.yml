@@ -1,0 +1,14 @@
+server:
+  port: 8880
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8881/eureka/
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/harper182/config-repo

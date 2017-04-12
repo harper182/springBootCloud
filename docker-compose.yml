@@ -1,0 +1,31 @@
+eureka:
+  image: "discovery:1.0"
+  hostname: eureka
+  name: eureka
+  ports:
+    - "8880:8880"
+service1:
+  image: "service1:1.0"
+  hostname: service1
+  name: service1
+  links:
+    - eureka
+  ports:
+    - "8882:8882"
+service2:
+  image: "service2:1.0"
+  hostname: service2
+  name: service2
+  links:
+    - eureka
+    - service1
+  ports:
+    - "8883:8883"
+zuul:
+  image: "zuul:1.0"
+  hostname: zuul
+  name: zuul
+  links:
+    - eureka
+  ports:
+    - "8885:8885"
