@@ -10,4 +10,4 @@ spring:
 services:
   service1:
     name: service1
-    baseUrl: http://127.0.0.1:8882
+    baseUrl:

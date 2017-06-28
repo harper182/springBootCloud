@@ -1,5 +1,8 @@
-dependencies {
-    compile 'org.springframework.cloud:spring-cloud-starter'
-    compile 'org.springframework.cloud:spring-cloud-config-server'
-    compile 'org.springframework.cloud:spring-cloud-starter-eureka'
-}
+// apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'
+// buildscript {
+//     dependencies {
+//     }
+// }
+// dependencies {
+//     compile 'org.springframework.cloud:spring-cloud-starter'
+// }

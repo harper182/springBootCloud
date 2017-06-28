@@ -12,7 +12,8 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:${server.port}/eureka/
   server:
-    enable-self-preservation: true
+    enable-self-preservation: false
+
   instance:
     hostname: localhost
     metadataMap:

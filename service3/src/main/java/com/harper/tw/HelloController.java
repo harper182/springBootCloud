@@ -4,16 +4,17 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
-@RestController
 public class HelloController {
+
     @Autowired
-    private ServiceAgent serviceAgent;
+    private RestTemplate restTemplate;
 
     @RequestMapping("/hello")
-    @HystrixCommand(fallbackMethod = "helloFallBack")
     public String hello() {
-        return serviceAgent.hello();
+        String object = restTemplate.getForObject("http://hello-service/hello", String.class);
+        return String.format("hello %s",object);
     }
 
     public String helloFallBack(){
