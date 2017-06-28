@@ -7,8 +7,8 @@ eureka:
 spring:
   application:
     name: service3
-hello-service:
-  ribbon:
-    eureka:
-      enable: true
-    listOfServers: localhost:8882
+#hello-service:
+#  ribbon:
+#    eureka:
+#      enable: true
+#    listOfServers: localhost:8882

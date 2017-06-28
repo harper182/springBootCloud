@@ -17,7 +17,7 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 @RestController
 @EnableEurekaClient
-@RibbonClient(name = "hello-service",configuration = RibbonConfiguration.class)
+//@RibbonClient(name = "hello-service",configuration = RibbonConfiguration.class)
 public class Service3Application {
 
     @LoadBalanced
