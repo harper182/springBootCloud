@@ -17,7 +17,7 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 @RestController
 @EnableEurekaClient
-//@RibbonClient(name = "hello-service",configuration = RibbonConfiguration.class)
+@EnableCircuitBreaker
 public class Service3Application {
 
     @LoadBalanced
@@ -25,13 +25,7 @@ public class Service3Application {
     public RestTemplate restTemplate(){
         return new RestTemplate();
     }
-    @Autowired
-    private RestTemplate restTemplate;
 
-    @RequestMapping("/hello")
-    public String hello(){
-        return this.restTemplate.getForObject("http://SERVICE1/hello",String.class);
-    }
     public static void main(String[] args) {
         SpringApplication.run(Service3Application.class, args);
     }

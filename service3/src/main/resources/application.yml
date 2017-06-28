@@ -12,3 +12,6 @@ spring:
 #    eureka:
 #      enable: true
 #    listOfServers: localhost:8882
+endpoints:
+  metrics:
+    sensitive: false

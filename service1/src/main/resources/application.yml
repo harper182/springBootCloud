@@ -10,3 +10,10 @@ eureka:
 spring:
   application:
     name: service1
+endpoints:
+  metrics:
+    sensitive: false
+management:
+  info:
+    git:
+      mode: full

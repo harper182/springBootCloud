@@ -6,18 +6,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+@RestController
 public class HelloController {
 
     @Autowired
     private RestTemplate restTemplate;
 
-    @RequestMapping("/hello")
-    public String hello() {
-        String object = restTemplate.getForObject("http://hello-service/hello", String.class);
-        return String.format("hello %s",object);
+    public String helloFallBack(){
+        return "error111";
     }
 
-    public String helloFallBack(){
-        return "error";
+    @RequestMapping("/hello")
+    @HystrixCommand(fallbackMethod = "helloFallBack")
+    public String hello(){
+        return this.restTemplate.getForObject("http://SERVICE1/hello",String.class);
     }
 }
