@@ -55,6 +55,7 @@ public class HelloController {
 
     @RequestMapping("/helloString1")
     public String helloString1() throws ExecutionException, InterruptedException {
+        HystrixRequestContext context = HystrixRequestContext.initializeContext();
         Future<String> future = new StringCommand(Setter.withGroupKey(HystrixCommandGroupKey.Factory.asKey(Constants.GROUP_KEY)).andCommandKey(HystrixCommandKey.Factory.asKey(Constants.COMMAND_KEY)), restTemplate, "whb").queue();
         return future.get();
     }

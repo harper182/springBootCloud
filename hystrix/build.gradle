@@ -1,8 +1,11 @@
-// apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'
-// buildscript {
-//     dependencies {
-//     }
-// }
-// dependencies {
-//     compile 'org.springframework.cloud:spring-cloud-starter'
-// }
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile 'org.springframework.cloud:spring-cloud-starter-hystrix'
+    compile 'org.springframework.cloud:spring-cloud-starter-hystrix-dashboard'
+    compile('com.google.guava:guava:18.0')
+    compile('org.apache.commons:commons-collections4:4.0')
+    compile group: 'com.thoughtworks.xstream', name: 'xstream', version: '1.4.9'
+    compile('io.springfox:springfox-swagger-ui:2.4.0')
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.4'
+    compile group: 'dom4j', name: 'dom4j', version: '1.6.1'
+}
