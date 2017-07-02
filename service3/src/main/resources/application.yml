@@ -18,16 +18,16 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMillseconds: 4000
+            timeoutInMillseconds: 5000
 SERVICE1:
   ribbon:
     eureka:
       enable: true
-    ConnectTimeout: 4000
-    ReadTimeout: 4000
-    OkToRetryOnAllOperations: true
-    MaxAutoRetriesNextServer: 1
-    MaxAutoRetries: 2
-    ServerListRefreshInterval: 30000
+#    ConnectTimeout: 4000
+#    ReadTimeout: 4000
+#    OkToRetryOnAllOperations: true
+#    MaxAutoRetriesNextServer: 1
+#    MaxAutoRetries: 2
+#    ServerListRefreshInterval: 30000
 
 

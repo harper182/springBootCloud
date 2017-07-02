@@ -25,4 +25,15 @@ public class StringCommand extends HystrixCommand<String>{
     protected String getFallback() {
         return String.format("hello %s",new Random().nextInt(1000));
     }
+
+    @Override
+    protected String getCacheKey() {
+        return string;
+    }
+
+//    public static void flushCache(int id) {
+//        //这里从HystrixRequestCache的getInstance静态方法中找到对应实例，并将响应值清除
+//        HystrixRequestCache.getInstance(GETTER_KEY,
+//                HystrixConcurrencyStrategyDefault.getInstance()).clear(String.valueOf(id));
+//    }
 }
