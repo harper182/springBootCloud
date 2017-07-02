@@ -5,3 +5,5 @@ classes
 *.iws
 logs
 out
+gradle
+.gradle
