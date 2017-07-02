@@ -1,0 +1,7 @@
+build
+classes
+*.ipr
+*.iml
+*.iws
+logs
+out

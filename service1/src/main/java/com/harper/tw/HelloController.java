@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
+import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 @RestController
 public class HelloController {
@@ -60,5 +62,16 @@ public class HelloController {
         int sleepTime = new Random().nextInt(3000);
         Thread.sleep(sleepTime);
         return new User(Integer.valueOf(id),"tw");
+    }
+
+    @GetMapping("/users/{ids}")
+    @ApiOperation(value = "hello users",response = List.class)
+    public List<User> helloUsers(@PathVariable("ids") List<String> ids) throws InterruptedException{
+        int sleepTime = new Random().nextInt(3000);
+        Thread.sleep(sleepTime);
+        if(ids == null || ids.isEmpty()){
+            return null;
+        }
+        return ids.stream().map(id -> new User(Integer.valueOf(id),"tw"+id)).collect(Collectors.toList());
     }
 }
