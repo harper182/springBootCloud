@@ -11,4 +11,5 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/harper182/config-repo
+          uri: https://github.com/harper182/springBootCloud     #or some else uri
+          search-paths: config-repo
