@@ -11,3 +11,13 @@ services:
   service1:
     name: service1
     baseUrl:
+SERVICE1:
+  ribbon:
+    connectTimeout: 500
+    ReadTimeout: 2000
+    OkToRetryOnAllOperations: true
+    MaxAutoRetriesNextServer: 10
+    MaxAutoRetries: 2
+feign:
+  hystrix:
+    enabled: true
