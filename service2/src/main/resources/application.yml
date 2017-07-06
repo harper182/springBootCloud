@@ -7,6 +7,8 @@ eureka:
 spring:
   application:
     name: service2
+  rabbitmq:
+      addresses: localhost:5672
 services:
   service1:
     name: service1

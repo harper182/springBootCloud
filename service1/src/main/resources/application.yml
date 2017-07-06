@@ -10,6 +10,8 @@ eureka:
 spring:
   application:
     name: service1
+  rabbitmq:
+    addresses: localhost:5672
 endpoints:
   metrics:
     sensitive: false
@@ -17,3 +19,4 @@ management:
   info:
     git:
       mode: full
+

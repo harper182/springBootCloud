@@ -4,8 +4,10 @@ package com.harper.tw;
 import com.harper.tw.entity.User;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,10 +15,14 @@ import java.util.Random;
 import java.util.stream.Collectors;
 
 @RestController
+@RefreshScope
 public class HelloController {
 
     @Autowired
     private DiscoveryClient client;
+
+    @Value("${hello.name: default}")
+    private String message;
 
     @GetMapping("/hello")
     @ApiOperation(value = "say service1", response = String.class)
@@ -84,5 +90,11 @@ public class HelloController {
     @RequestMapping(value = "/hello4", method = RequestMethod.POST)
     public String hello(@RequestBody User user){
         return "Hello "+user.getName() +","+user.getId();
+    }
+
+    @GetMapping("/hello-config")
+    @ApiOperation(value = "say hello", response = String.class)
+    public String helloConfig()  {
+        return message;
     }
 }
