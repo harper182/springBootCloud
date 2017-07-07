@@ -4,7 +4,7 @@ allprojects {
     apply plugin:'idea'
     apply plugin:'war'
     apply plugin:'jetty'
-    apply plugin: 'spring-boot'
+    apply plugin: 'org.springframework.boot'
     repositories {
         mavenCentral()
         maven { url "http://repo.spring.io/milestone" }
@@ -17,7 +17,7 @@ subprojects {
     apply plugin:'idea'
     apply plugin:'war'
     apply plugin:'jetty'
-    apply plugin: 'spring-boot'
+    apply plugin: 'org.springframework.boot'
     apply plugin: 'docker'
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
@@ -41,7 +41,7 @@ subprojects {
     }
     dependencyManagement {
         imports {
-            mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Angel.SR6'
+            mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Camden.SR5'
             mavenBom 'org.springframework.cloud:spring-cloud-netflix:1.2.3.RELEASE'
         }
     }

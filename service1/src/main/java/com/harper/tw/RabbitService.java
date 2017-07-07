@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.Input;
 import org.springframework.cloud.stream.annotation.StreamListener;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.SubscribableChannel;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +17,7 @@ public class RabbitService {
     @StreamListener(BindMessage.MSG)
     public void printMsg(){
         System.out.println("******************************************");
-        System.out.println("received msg");
+        System.out.println("receviced msg");
         System.out.println("******************************************");
     }
 
