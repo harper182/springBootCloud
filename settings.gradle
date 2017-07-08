@@ -1,1 +1,1 @@
-include 'eureka','config','zuul','hystrix','service1','service2','service3'
+include 'eureka','config','zuul','hystrix','service1','service2','service3','zipkin'

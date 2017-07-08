@@ -6,6 +6,7 @@ ext {
             tools: [
                     "org.springframework.boot:spring-boot-devtools",
                     "org.togglz:togglz-console:2.4.1.Final",
+                    "org.springframework.cloud:spring-cloud-starter-sleuth"
             ],
             online : [
                     "org.springframework.boot:spring-boot-starter-web",

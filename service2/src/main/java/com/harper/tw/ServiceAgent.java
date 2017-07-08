@@ -2,7 +2,6 @@ package com.harper.tw;
 
 
 import com.harper.tw.entity.User;
-import com.harper.tw.service.HelloServiceFallback;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.*;

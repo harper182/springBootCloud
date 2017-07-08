@@ -38,6 +38,7 @@ subprojects {
         testCompile  ("com.jayway.restassured:spring-mock-mvc:2.9.0")
         compile libs.util
         compile libs.tools
+        compile libs.online
     }
     dependencyManagement {
         imports {

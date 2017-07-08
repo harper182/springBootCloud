@@ -12,6 +12,8 @@ spring:
     name: service1
   rabbitmq:
     addresses: localhost:5672
+  zipkin:
+    base-url: http://localhost:8886
 endpoints:
   metrics:
     sensitive: false
@@ -19,4 +21,7 @@ management:
   info:
     git:
       mode: full
+sleuth:
+  enable: true
+  zipkin: true
 

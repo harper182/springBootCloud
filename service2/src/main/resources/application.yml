@@ -9,6 +9,13 @@ spring:
     name: service2
   rabbitmq:
       addresses: localhost:5672
+  sleuth:
+    enable: true
+    zipkin: true
+    sampler:
+      percentage: 1 #抽样策略,以请求百分比的形式配置和收集跟踪信息,默认0.1,代表收集10%的请求跟踪信息.
+  zipkin:
+    base-url: http://localhost:8886
 services:
   service1:
     name: service1
@@ -23,3 +30,10 @@ SERVICE1:
 feign:
   hystrix:
     enabled: true
+logging:
+  level:
+    org:
+      springframework:
+        web:
+          servlet:
+            DispatcherServlet: DEBUG

@@ -3,6 +3,8 @@ server:
 spring:
   application:
     name: eureka
+  zipkin:
+    base-url: http://localhost:8886
 eureka:
   client:
     register-with-eureka: false

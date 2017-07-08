@@ -11,7 +11,6 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 @SpringBootApplication
 @EnableEurekaClient
 @EnableAutoConfiguration
-@EnableZuulProxy
 public class ZuulApplication {
     public static void main(String[] args) {
         new SpringApplicationBuilder(ZuulApplication.class).web(true).run(args);
