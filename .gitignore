@@ -6,4 +6,4 @@ classes
 logs
 out
 gradle
-.gradle
+.gradle/**
