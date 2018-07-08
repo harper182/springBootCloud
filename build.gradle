@@ -5,12 +5,14 @@ allprojects {
     apply plugin:'war'
     apply plugin:'jetty'
     apply plugin: 'org.springframework.boot'
+    apply plugin: 'spring-cloud-contract'
     repositories {
         mavenCentral()
         maven { url "http://repo.spring.io/milestone" }
         maven { url "http://repo.spring.io/snapshot" }
         maven { url "https://plugins.gradle.org/m2/" }
     }
+
 }
 subprojects {
     apply plugin:'java'
@@ -43,6 +45,7 @@ subprojects {
         imports {
             mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Camden.SR5'
             mavenBom 'org.springframework.cloud:spring-cloud-netflix:1.2.3.RELEASE'
+            mavenBom 'org.springframework.cloud:spring-cloud-contract-dependencies:2.0.1.BUILD-SNAPSHOT'
         }
     }
     task distJar(type: Jar){
@@ -80,7 +83,13 @@ buildscript {
         classpath('se.transmode.gradle:gradle-docker:1.2')
         classpath "org.springframework.boot:spring-boot-gradle-plugin:1.5.4.RELEASE"
         classpath 'org.springframework:springloaded:1.2.6.RELEASE'
+        classpath "org.springframework.cloud:spring-cloud-contract-gradle-plugin:2.0.1.BUILD-SNAPSHOT"
+
     }
+}
+contracts {
+    baseClassForTests = 'com.example.MvcTest'
+    // fully qualified name to a class that will be the base class for your generated test classes
 }
 idea {
     module {

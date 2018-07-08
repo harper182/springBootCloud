@@ -7,3 +7,13 @@ logs
 out
 gradle
 .gradle/**
+/.gradle/
+.idea
+.classpath
+*/.classpath
+*/.project
+*/.*
+*/bin
+.DS_Store
+.project
+.settings
