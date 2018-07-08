@@ -11,5 +11,5 @@ dependencies {
     compile group: 'dom4j', name: 'dom4j', version: '1.6.1'
     compile "org.springframework.cloud:spring-cloud-stream-binder-rabbit"
     testCompile 'org.springframework.cloud:spring-cloud-starter-contract-verifier'
-
+    testCompile "org.springframework.boot:spring-boot-starter-test"
 }

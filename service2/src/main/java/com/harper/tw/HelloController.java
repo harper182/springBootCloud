@@ -6,6 +6,8 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 public class HelloController {
     @Autowired
@@ -35,7 +37,7 @@ public class HelloController {
     }
 
     @RequestMapping(value = "/hello4", method = RequestMethod.POST)
-    public String hello44(@RequestBody User user) {
+    public String hello44(@RequestBody @Valid User user) {
         return serviceAgent.hello4(user);
     }
 

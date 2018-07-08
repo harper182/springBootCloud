@@ -1,0 +1,14 @@
+spring:
+  profiles: test
+  cloud:
+    config:
+      discovery:
+        enabled: false
+      enabled: false
+  sleuth:
+    enabled: false
+  zipkin:
+    enabled: false
+eureka:
+  client:
+    enabled: false

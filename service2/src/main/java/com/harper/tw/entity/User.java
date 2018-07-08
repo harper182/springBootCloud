@@ -1,10 +1,14 @@
 package com.harper.tw.entity;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 /**
  * Created by hbowang on 7/5/17.
  */
 public class User {
+    @NotEmpty
     private String id;
+    @NotEmpty
     private String name;
 
     public User(){
