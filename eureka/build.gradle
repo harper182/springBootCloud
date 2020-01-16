@@ -1,8 +1,10 @@
+//apply plugin: "io.spring.dependency-management"
+//apply plugin: "org.springframework.boot"
+
 dependencies {
     compile libs.tools
-    compile 'org.springframework.cloud:spring-cloud-starter-eureka-server'
+    compile 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
     compile("org.springframework.boot:spring-boot-starter-actuator")
-
     compile group: 'net.logstash.logback', name: 'logstash-logback-encoder', version: '4.7'
     //TODO:version 1.7 has some bug with logstash, wait version 1.8
     compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.1.6'

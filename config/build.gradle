@@ -1,8 +1,8 @@
+configurations {
+    compile.exclude module: 'hibernate-validator'
+}
 dependencies {
-    compile libs.tools
     compile('org.springframework.boot:spring-boot-starter-web')
-    compile 'org.springframework.cloud:spring-cloud-starter'
     compile 'org.springframework.cloud:spring-cloud-config-server'
-    compile ('org.springframework.cloud:spring-cloud-starter-eureka')
-    compile "org.springframework.cloud:spring-cloud-starter-bus-amqp"
+    compile ('org.springframework.cloud:spring-cloud-starter-config')
 }

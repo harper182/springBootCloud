@@ -2,11 +2,14 @@ ext {
     guavaVersion = "19.0"
     swaggerVersion = "2.4.0"
     logbackVersion = "1.1.11"
+    swaggerAnnotationVersion="1.6.0"
     libs = [
+            common: [
+                    "io.springfox:springfox-swagger-ui:${swaggerVersion}",
+                    "io.springfox:springfox-swagger2:${swaggerVersion}"
+            ],
             tools: [
-                    "org.springframework.boot:spring-boot-devtools",
-                    "org.togglz:togglz-console:2.4.1.Final",
-                    "org.springframework.cloud:spring-cloud-starter-sleuth"
+                    "org.togglz:togglz-console:2.4.1.Final"
             ],
             online : [
                     "org.springframework.boot:spring-boot-starter-web",
@@ -17,13 +20,7 @@ ext {
                     "org.springframework.cloud:spring-cloud-starter-sleuth",
                     "org.springframework.cloud:spring-cloud-starter-zipkin",
                     "org.springframework.cloud:spring-cloud-stream-binder-rabbit",
-                    "net.logstash.logback:logstash-logback-encoder:4.7",
-                    "io.springfox:springfox-swagger-ui:${swaggerVersion}",
-            ],
-            offline: [
-                    "org.springframework.boot:spring-boot-starter-web",
-                    "org.springframework.boot:spring-boot-starter-actuator",
-                    "org.springframework.cloud:spring-cloud-starter-feign",
+                    "net.logstash.logback:logstash-logback-encoder:4.7"
             ],
             util   : [
                     "com.google.guava:guava:${guavaVersion}",
@@ -34,7 +31,6 @@ ext {
                     "org.apache.poi:poi:3.9",
                     "com.ibm.icu:icu4j:58.2",
                     "com.alibaba:fastjson:1.2.22",
-                    "io.springfox:springfox-swagger2:${swaggerVersion}",
                     "ch.qos.logback:logback-classic:${logbackVersion}",
                     "ch.qos.logback:logback-core:${logbackVersion}",
                     "org.togglz:togglz-spring-boot-starter:2.4.1.Final",
@@ -46,7 +42,12 @@ ext {
                     "org.springframework.restdocs:spring-restdocs-mockmvc",
                     "com.jayway.restassured:rest-assured:2.9.0",
                     "com.jayway.restassured:spring-mock-mvc:2.9.0",
-                    "org.togglz:togglz-junit:2.4.1.Final"
+                    "org.togglz:togglz-junit:2.4.1.Final",
+                    "org.springframework.boot:spring-boot-starter-test",
+                    "org.assertj:assertj-core:3.5.2",
+                    "org.springframework.restdocs:spring-restdocs-mockmvc",
+                    "com.jayway.restassured:rest-assured:2.9.0",
+                    "com.jayway.restassured:spring-mock-mvc:2.9.0"
             ],
     ]
 }
